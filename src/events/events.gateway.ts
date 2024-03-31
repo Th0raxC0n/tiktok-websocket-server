@@ -31,7 +31,7 @@ export class EventsGateway {
   sendAllGiftsToAllClients(data: any) {
     this.server.emit('allGifts', data);
   }
-
+//d
   
   @SubscribeMessage('REQUEST_ALL_GIFTS')
   async getAllGifts(client: Socket) {
