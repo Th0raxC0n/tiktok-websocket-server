@@ -31,12 +31,17 @@ export class EventsGateway {
   sendAllGiftsToAllClients(data: any) {
     this.server.emit('allGifts', data);
   }
-
   
   @SubscribeMessage('REQUEST_ALL_GIFTS')
   async getAllGifts(client: Socket) {
     const gifts = this.tiktokLiveService.getGifts();
     this.server.emit('allGifts', gifts);
+  }
+
+  @SubscribeMessage('REQUEST_ROOM_INFO')
+  async getRoomInfo(client: Socket) {
+    const roomInfo = this.tiktokLiveService.getRoomInfo();
+    this.server.emit('roomInfo', roomInfo);
   }
 
 }

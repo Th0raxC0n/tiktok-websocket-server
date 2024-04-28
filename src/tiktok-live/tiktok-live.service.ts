@@ -5,8 +5,9 @@ import { EventsGateway } from 'src/events/events.gateway';
 @Injectable()
 export class TiktokLiveService {
 
-  private tiktokUsername = 'randiisworld'//'randiilyn';
+  private tiktokUsername = 'imsundry'//'randiilyn';
   private availableGifts: any[] = [];
+  private roomInfo: any;
   
   constructor(private eventsGateway: EventsGateway) {}
   onModuleInit() {
@@ -57,8 +58,16 @@ export class TiktokLiveService {
       });
       this.availableGifts = gifts;
     });
+
+    tiktokLiveConnection.getRoomInfo().then(roomInfo => {
+      console.log('Room info:', roomInfo);
+      this.roomInfo = roomInfo;
+    });
   }
   getGifts() {
     return this.availableGifts;
+  }
+  getRoomInfo() {
+    return this.roomInfo;
   }
 }
