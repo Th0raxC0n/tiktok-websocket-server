@@ -5,7 +5,7 @@ import { EventsGateway } from 'src/events/events.gateway';
 @Injectable()
 export class TiktokLiveService {
 
-  private tiktokUsername = '@imsundry'//'randiilyn';
+  private tiktokUsername = 'imsundry'//'randiilyn';
   private availableGifts: any[] = [];
   private roomInfo: any;
   
@@ -14,7 +14,7 @@ export class TiktokLiveService {
     this.connectToLiveStream();
   }
   connectToLiveStream() {
-    const tiktokLiveConnection = new WebcastPushConnection(this.tiktokUsername,{processInitialData: false});
+    const tiktokLiveConnection = new WebcastPushConnection(this.tiktokUsername);
     tiktokLiveConnection.connect().then(state => {
       console.info(`Connected to roomId ${state.roomId}`);
     }).catch(err => {
