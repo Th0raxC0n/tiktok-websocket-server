@@ -16,7 +16,7 @@ export class TiktokLiveService {
   connectToLiveStream() {
     const tiktokLiveConnection = new WebcastPushConnection(this.tiktokUsername, {
       // sessionId: 'e8a6f025b49868f9dc845d8e00d18c58',
-      requestPollingIntervalMs: 1000,
+      // requestPollingIntervalMs: 1000,
     });
     tiktokLiveConnection.connect().then(state => {
       console.info(`Connected to roomId ${state.roomId}`);
