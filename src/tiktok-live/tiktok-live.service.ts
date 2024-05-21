@@ -5,7 +5,7 @@ import { EventsGateway } from 'src/events/events.gateway';
 @Injectable()
 export class TiktokLiveService {
 
-  private tiktokUsername = 'randiisworld'//'randiisworld';
+  private tiktokUsername = 'randis.world'//'randiisworld';
   private availableGifts: any[] = [];
   private roomInfo: any;
   
